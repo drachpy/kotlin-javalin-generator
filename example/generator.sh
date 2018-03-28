@@ -12,12 +12,13 @@ VERB=$1
 ROUTE_PATH=$ROOT/App.kt
 
 if [ "$VERB" = "INIT" ]; then
+    echo "Initialising..."
     if [ ! -d $ROOT/models/ ]; then
-        mkdir $ROOT/models/
+        mkdir -p $ROOT/models/
     fi
 
     if [ ! -d $ROOT/modules/ ]; then
-        mkdir $ROOT/modules/
+        mkdir -p $ROOT/modules/
     fi
 
     if [ ! -f $ROUTE_PATH ]; then
@@ -45,6 +46,7 @@ if [ "$VERB" = "INIT" ]; then
         echo "" >> $ROUTE_PATH
     fi
 
+    echo "FIN."
     exit 1
 fi
 
